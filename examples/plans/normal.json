@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "request_id": "example-normal",
+  "original_input": {
+    "request_id": "example-normal",
+    "theme": "春季新品",
+    "budget": 10,
+    "deadline": "2027-12-31T23:59:59Z"
+  },
+  "current_plan": {
+    "plan_id": "alternative",
+    "title": "轻量替代方案",
+    "steps": [
+      {
+        "step_id": "produce",
+        "title": "内容制作",
+        "cost_item_id": "social",
+        "depends_on": [],
+        "quantity": 1
+      }
+    ],
+    "plan_fingerprint": "4b65a362f2b37a40c9ab5d71030b1b359a3f394500b99ff97499951eca75dff7"
+  },
+  "material_references": [
+    {
+      "material_id": "M001",
+      "facts": [
+        "新品支持字幕展示",
+        "提供三种外观配色",
+        "可在活动页预约体验"
+      ]
+    }
+  ],
+  "script": {
+    "script_id": "script-81335a91-d6a6-4255-adc8-b3fd7fd85f20",
+    "plan_id": "alternative",
+    "plan_fingerprint": "4b65a362f2b37a40c9ab5d71030b1b359a3f394500b99ff97499951eca75dff7",
+    "title": "轻量替代方案｜春季新品",
+    "content": "主题：春季新品\n方案：轻量替代方案\n素材 M001：新品支持字幕展示；提供三种外观配色；可在活动页预约体验",
+    "material_ids": [
+      "M001"
+    ],
+    "material_references": [
+      {
+        "material_id": "M001",
+        "facts": [
+          "新品支持字幕展示",
+          "提供三种外观配色",
+          "可在活动页预约体验"
+        ]
+      }
+    ],
+    "generated_at": "2026-11-01T17:21:47.381Z",
+    "valid": true
+  },
+  "cost": {
+    "current": {
+      "plan_id": "alternative",
+      "plan_fingerprint": "4b65a362f2b37a40c9ab5d71030b1b359a3f394500b99ff97499951eca75dff7",
+      "items": [
+        {
+          "step_id": "produce",
+          "cost_item_id": "social",
+          "quantity": 1,
+          "unit_cost": 4,
+          "subtotal_cost": 4,
+          "subtotal_duration_seconds": 180
+        }
+      ],
+      "total_cost": 4,
+      "total_duration_seconds": 180,
+      "started_at": "2026-11-01T17:21:47.366Z",
+      "estimated_completion_at": "2026-11-01T17:24:47.366Z",
+      "budget": 10,
+      "deadline": "2027-12-31T23:59:59Z",
+      "budget_feasible": true,
+      "time_feasible": true,
+      "feasible": true,
+      "budget_gap": 0,
+      "estimate_id": "estimate-b71737ab-df2d-4251-9ef1-b1c4a10421bc",
+      "estimated_at": "2026-11-01T17:21:47.379Z",
+      "valid": true
+    },
+    "history_estimate_ids": [
+      "estimate-8d0ebd16-a5b7-43f3-b36d-587ad0acdc74",
+      "estimate-b71737ab-df2d-4251-9ef1-b1c4a10421bc"
+    ]
+  },
+  "duration": {
+    "current": {
+      "total_duration_seconds": 180,
+      "started_at": "2026-11-01T17:21:47.366Z",
+      "estimated_completion_at": "2026-11-01T17:24:47.366Z"
+    },
+    "items": [
+      {
+        "step_id": "produce",
+        "cost_item_id": "social",
+        "quantity": 1,
+        "unit_cost": 4,
+        "subtotal_cost": 4,
+        "subtotal_duration_seconds": 180
+      }
+    ]
+  },
+  "saved_at": "2026-11-01T17:21:47.383Z"
+}

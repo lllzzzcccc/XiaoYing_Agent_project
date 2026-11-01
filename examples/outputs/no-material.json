@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "request_id": "example-no-material",
+  "duplicate": false,
+  "status": "incomplete",
+  "mode": "mock",
+  "task_plan": null,
+  "steps": [
+    {
+      "step_id": "step-a51face9-55f5-425a-abda-6a3a01ebc29d",
+      "tool_call_id": "tool:1793553707861:x6x21r1t2pp",
+      "tool_name": "search_materials",
+      "attempt": 1,
+      "status": "succeeded",
+      "depends_on": [],
+      "args": {
+        "query": "完全不存在的内容"
+      },
+      "result_summary": {
+        "query": "完全不存在的内容",
+        "items": [],
+        "count": 0
+      },
+      "error": null,
+      "plan_id": null,
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:21:47.863Z",
+      "finished_at": "2026-11-01T17:21:47.864Z"
+    },
+    {
+      "step_id": "step-ae0578b3-38ad-410c-b429-e519cc05ba02",
+      "tool_call_id": "tool:1793553707864:x8wl8zabre",
+      "tool_name": "search_materials",
+      "attempt": 2,
+      "status": "succeeded",
+      "depends_on": [],
+      "args": {
+        "query": "其他素材"
+      },
+      "result_summary": {
+        "query": "其他素材",
+        "items": [],
+        "count": 0
+      },
+      "error": null,
+      "plan_id": null,
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:21:47.865Z",
+      "finished_at": "2026-11-01T17:21:47.865Z"
+    }
+  ],
+  "tool_results": [
+    {
+      "step_id": "step-a51face9-55f5-425a-abda-6a3a01ebc29d",
+      "tool_name": "search_materials",
+      "status": "succeeded",
+      "result_summary": {
+        "query": "完全不存在的内容",
+        "items": [],
+        "count": 0
+      },
+      "error": null
+    },
+    {
+      "step_id": "step-ae0578b3-38ad-410c-b429-e519cc05ba02",
+      "tool_name": "search_materials",
+      "status": "succeeded",
+      "result_summary": {
+        "query": "其他素材",
+        "items": [],
+        "count": 0
+      },
+      "error": null
+    }
+  ],
+  "current_cost": null,
+  "duration": null,
+  "saved_plan": null,
+  "reasons": [
+    {
+      "code": "NO_MATERIALS",
+      "message": "调整查询后仍无可用素材"
+    }
+  ],
+  "trace": {
+    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/example-runs/no-material/traces/e8754bbfb9414ce5bf23aeec722ff3872eb6508fc189cdb1de19805d76044306.jsonl",
+    "mode": "mock"
+  }
+}

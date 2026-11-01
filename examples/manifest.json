@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "mode": "mock",
+  "generated_at": "2026-11-01T17:21:47.135Z",
+  "scenarios": [
+    {
+      "id": "normal",
+      "mode": "mock",
+      "input": "examples/inputs/normal.json",
+      "output": "examples/outputs/normal.json",
+      "trace": "examples/traces/normal.jsonl",
+      "plan": "examples/plans/normal.json",
+      "exit_code": 0,
+      "actual_status": "completed"
+    },
+    {
+      "id": "missing-budget",
+      "mode": "mock",
+      "input": "examples/inputs/missing-budget.json",
+      "output": "examples/outputs/missing-budget.json",
+      "trace": null,
+      "plan": null,
+      "exit_code": 2,
+      "actual_status": "incomplete"
+    },
+    {
+      "id": "save-failure",
+      "mode": "mock",
+      "input": "examples/inputs/save-failure.json",
+      "output": "examples/outputs/save-failure.json",
+      "trace": "examples/traces/save-failure.jsonl",
+      "plan": null,
+      "exit_code": 1,
+      "actual_status": "incomplete"
+    },
+    {
+      "id": "no-material",
+      "mode": "mock",
+      "input": "examples/inputs/no-material.json",
+      "output": "examples/outputs/no-material.json",
+      "trace": "examples/traces/no-material.jsonl",
+      "plan": null,
+      "exit_code": 1,
+      "actual_status": "incomplete"
+    },
+    {
+      "id": "execution-limit",
+      "mode": "mock",
+      "input": "examples/inputs/execution-limit.json",
+      "output": "examples/outputs/execution-limit.json",
+      "trace": "examples/traces/execution-limit.jsonl",
+      "plan": null,
+      "exit_code": 1,
+      "actual_status": "incomplete"
+    },
+    {
+      "id": "dual-infeasible",
+      "mode": "mock",
+      "input": "examples/inputs/dual-infeasible.json",
+      "output": "examples/outputs/dual-infeasible.json",
+      "trace": "examples/traces/dual-infeasible.jsonl",
+      "plan": null,
+      "exit_code": 1,
+      "actual_status": "incomplete"
+    }
+  ],
+  "duplicates": [
+    {
+      "of": "normal",
+      "output": "examples/outputs/normal-duplicate.json",
+      "actual_status": "completed",
+      "duplicate": true
+    }
+  ]
+}

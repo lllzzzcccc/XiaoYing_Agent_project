@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "request_id": "example-missing-budget",
+  "duplicate": false,
+  "status": "incomplete",
+  "mode": "mock",
+  "task_plan": null,
+  "steps": [],
+  "tool_results": [],
+  "current_cost": null,
+  "duration": null,
+  "saved_plan": null,
+  "reasons": [
+    {
+      "code": "INPUT_MISSING",
+      "field": "budget",
+      "message": "缺少必填字段 budget"
+    }
+  ],
+  "trace": {
+    "path": null,
+    "mode": "mock"
+  }
+}
