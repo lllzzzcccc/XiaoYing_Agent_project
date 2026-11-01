@@ -23,6 +23,8 @@
 - **REFACTOR**：整理最简 npm scripts 和目录边界，不加入 Web、数据库或多 Agent 依赖。
 - **VERIFY**：干净安装、构建和依赖契约检查通过，文档记录实际版本。
 - **依赖**：无。
+- **状态**：已完成。
+- **实际结果**：`npm ci`、`npm run build` 和 `npm test` 均通过，4 项依赖契约测试通过；实际版本记录于 `docs/02-solution.md`。
 
 ### T002：实现 JSON 输入、结果外壳与输入校验
 
