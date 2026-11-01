@@ -11,7 +11,7 @@
 | AC-003 缺少截止时间 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs` | 已通过离线最终验收 |
 | AC-004 工具失败与部分成功 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | 已通过离线最终验收 |
 | AC-005 保存失败 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | 已通过离线最终验收 |
-| AC-006 超预算替代方案 | 离线端到端通过 | `tests/pi-agent.test.mjs`、`tests/orchestrator.test.mjs` | 真实 Provider 凭据与模型配置 |
+| AC-006 超预算替代方案 | 离线端到端通过 | `tests/pi-agent.test.mjs`、`tests/orchestrator.test.mjs` | 已通过离线最终验收 |
 | AC-007 无可行方案与预算缺口 | 离线端到端通过 | `tests/orchestrator.test.mjs` | 已通过离线最终验收 |
 | AC-008 截止时间不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | 已通过离线最终验收 |
 | AC-009 跨进程重复执行 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/outputs/normal-duplicate.json` | 已通过离线最终验收 |
@@ -35,6 +35,6 @@
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 通过 | 6 组离线材料及 2 条真实路径，P0 场景均有证据 |
 | DAC-004 两条真实动态路径 | 通过 | `examples/real/manifest.json` 及两条真实 Trace |
 | DAC-005 仓库与文档完整 | 通过 | `README.md`、`docs/`、`examples/README.md` |
-| DAC-006 提交信息与无敏感数据 | 进行中 | 本地提交正常；URL、权限和最终 SHA 属提交阶段 |
+| DAC-006 提交信息与无敏感数据 | 本地验收通过 | 本地提交与最终 SHA 可用，敏感文件检查通过；GitHub URL 和评审权限按 Q-009 在提交阶段处理 |
 | DAC-007 离线 Mock 边界 | 通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` |
 | DAC-008 技术栈、官方 Pi 包与版本锁定 | 通过 | `tests/dependency-contract.test.mjs`、`docs/02-solution.md` |
