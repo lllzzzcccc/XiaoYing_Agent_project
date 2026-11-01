@@ -21,8 +21,8 @@ function plan(id: string, costItemId: string): JsonValue {
   return candidate as unknown as JsonValue;
 }
 
-function nextOfflineResponse(state: RunState, costItemIds: string[]) {
-  const latestStep = state.steps.at(-1);
+function nextOfflineResponse(state: RunState, costItemIds: string[], initialStepCount: number) {
+  const latestStep = state.steps.length > initialStepCount ? state.steps.at(-1) : undefined;
   if (latestStep?.status === "failed") return fauxAssistantMessage("工具失败，保留已有结果并停止");
 
   const initialCostItem = costItemIds.includes("premium") ? "premium" : costItemIds.at(-1)!;
@@ -83,9 +83,10 @@ function nextOfflineResponse(state: RunState, costItemIds: string[]) {
 export function createOfflineRuntime(state: RunState, costItemIds: string[]): Pick<PiAgentRunOptions, "model" | "streamFn"> {
   const faux = fauxProvider();
   const models = createModels();
+  const initialStepCount = state.steps.length;
   models.setProvider(faux.provider);
   const streamFn: StreamFn = (model, context, options) => {
-    faux.setResponses([() => nextOfflineResponse(state, costItemIds)]);
+    faux.setResponses([() => nextOfflineResponse(state, costItemIds, initialStepCount)]);
     return models.streamSimple(model, context, options);
   };
   return { model: faux.getModel(), streamFn };

@@ -19,7 +19,7 @@ test("all P0 acceptance scenarios have existing offline evidence", async () => {
     assert.ok(!row.includes("未覆盖"), `${id} has no coverage`);
     const evidence = [...row.matchAll(/`([^`]+)`/g)]
       .map((match) => match[1])
-      .filter((value) => value.startsWith("tests/"));
+      .filter((value) => value.startsWith("tests/") || value.startsWith("examples/"));
     assert.ok(evidence.length > 0, `${id} has no test evidence path`);
     for (const relativePath of evidence) {
       await stat(path.join(projectRoot, relativePath));

@@ -17,7 +17,7 @@
 | AC-009 跨进程重复执行 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/outputs/normal-duplicate.json` | T018 最终验收 |
 | AC-010 两条真实动态路径 | 外部阻塞 | `tests/pi-agent.test.mjs` 仅证明 Faux 路径 | 真实 Provider 凭据与模型配置 |
 | AC-011 执行上限 | 实际离线材料通过 | `examples/outputs/execution-limit.json` | T018 最终验收 |
-| AC-012 失败步骤续跑（P1） | 未覆盖 | — | T016 |
+| AC-012 失败步骤续跑（P1） | 独立进程通过 | `tests/resume.test.mjs` | T018 最终验收 |
 | AC-013 离线 Mock 边界 | 实际离线材料通过 | `examples/manifest.json` | T017 边界文档 |
 | AC-014 缺失或非法输入 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs`、`tests/cli.test.mjs` | T018 最终验收 |
 | AC-015 无素材 | 实际离线材料通过 | `examples/outputs/no-material.json`、`examples/traces/no-material.jsonl` | T018 最终验收 |
@@ -31,7 +31,7 @@
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
 | DAC-001 可安装、配置并通过 CLI 运行 | CLI 验证通过 | `tests/cli.test.mjs`；README 待 T017 |
-| DAC-002 可执行测试与评估引用 | 进行中 | 当前 55 项测试通过；评估文档待 T017 |
+| DAC-002 可执行测试与评估引用 | 进行中 | 当前 58 项测试通过；评估文档待 T017 |
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 部分覆盖 | 已有 6 组离线材料；真实动态路径外部阻塞 |
 | DAC-004 两条真实动态路径 | 外部阻塞 | 真实 Provider 凭据与模型配置未提供 |
 | DAC-005 仓库与文档完整 | 进行中 | 基础配置已提交；其余文档待 T017 |

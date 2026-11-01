@@ -92,6 +92,7 @@ export interface RunState {
   saved_plan: SavedPlanReference | null;
   reasons: ResultReason[];
   original_result: RunResult | null;
+  result_history: RunResult[];
   trace_path: string;
 }
 
@@ -127,6 +128,7 @@ export function createRunState(options: {
     saved_plan: null,
     reasons: [],
     original_result: null,
+    result_history: [],
     trace_path: options.tracePath,
   };
 }

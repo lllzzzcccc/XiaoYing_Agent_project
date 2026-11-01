@@ -42,25 +42,24 @@ export async function runCli(argv: string[], env: NodeJS.ProcessEnv = process.en
   try {
     const options = parseCliArgs(argv);
     mode = options.offline ? "mock" : "real";
-    if (options.resume) {
-      return { result: errorResult(requestId, mode, "RESUME_UNSUPPORTED", "当前版本尚未实现续跑"), exitCode: 2 };
-    }
-
     const text = await readFile(options.input, "utf8");
     const parsed = parsePlanningRequest(text);
     requestId = parsed.request.request_id;
     const runtime = options.offline ? null : createRealRuntime(env);
     const store = new RequestStore(options.runtimeDir);
-    const opened = await store.beginRequest({
+    const requestInput = {
       request: parsed.request,
       originalInput: parsed.originalInput,
       mode,
       maxToolCalls: maxToolCalls(env),
-    });
+    };
+    const opened = options.resume
+      ? await store.resumeRequest(requestInput)
+      : await store.beginRequest(requestInput);
     if (opened.kind === "duplicate") {
       return { result: opened.result, exitCode: opened.result.status === "completed" ? 0 : 1 };
     }
-    if (opened.kind === "conflict") return { result: opened.result, exitCode: 2 };
+    if (opened.kind === "conflict" || opened.kind === "unsupported") return { result: opened.result, exitCode: 2 };
 
     const dataRoot = fileURLToPath(new URL("../../../data/", import.meta.url));
     const [materials, costItems] = await Promise.all([

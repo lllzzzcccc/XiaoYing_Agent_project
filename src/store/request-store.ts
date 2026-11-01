@@ -21,9 +21,10 @@ interface BeginRequestInput {
 }
 
 export type BeginRequestResult =
-  | { kind: "new"; record: RunState }
+  | { kind: "new" | "resumed"; record: RunState }
   | { kind: "duplicate"; result: RunResult }
-  | { kind: "conflict"; result: RunResult };
+  | { kind: "conflict"; result: RunResult }
+  | { kind: "unsupported"; result: RunResult };
 
 export function hashRequestId(requestId: string): string {
   return createHash("sha256").update(requestId, "utf8").digest("hex");
@@ -85,6 +86,33 @@ export class RequestStore {
     });
     await this.save(record);
     return { kind: "new", record };
+  }
+
+  async resumeRequest(input: BeginRequestInput): Promise<BeginRequestResult> {
+    const existing = await this.load(input.request.request_id);
+    if (!existing) {
+      const result = createInitialResult(input.request.request_id, input.mode);
+      result.reasons = [{ code: "RESUME_UNSUPPORTED", message: "不存在可续跑的请求状态" }];
+      return { kind: "unsupported", result };
+    }
+    if (existing.input_fingerprint !== fingerprintJson(input.originalInput)) {
+      return { kind: "conflict", result: createRequestConflictResult(input.request.request_id, input.mode) };
+    }
+    if (existing.original_result?.status === "completed") {
+      return { kind: "duplicate", result: markDuplicateResult(existing.original_result) };
+    }
+
+    existing.result_history ??= [];
+    if (existing.original_result) existing.result_history.push(structuredClone(existing.original_result));
+    existing.original_result = null;
+    existing.status = "running";
+    existing.finished_at = null;
+    existing.mode = input.mode;
+    existing.reasons = [];
+    existing.limit_reached = false;
+    existing.max_tool_calls = input.maxToolCalls ?? existing.max_tool_calls;
+    await this.save(existing);
+    return { kind: "resumed", record: existing };
   }
 
   async finalize(record: RunState, result: RunResult): Promise<void> {
