@@ -6,11 +6,12 @@
 
 - `npm ci`：通过，npm 审计 0 个漏洞。
 - `npm run build`：通过。
-- `npm test`：63 项测试通过，0 项失败。
+- `npm test`：64 项测试通过，0 项失败。
 - 离线 CLI：正常、输入不足、保存失败、无素材、执行上限和双重不可行均生成实际结果。
+- 真实 CLI：两条不同工具观察路径均通过证据校验。
 - P1 续跑：复用成功结果、保留失败历史、开始时间不变且重试不额外计费。
 
-测试证据包括 `tests/input-contract.test.mjs`、`tests/domain-rules.test.mjs`、`tests/pi-agent.test.mjs`、`tests/orchestrator.test.mjs`、`tests/cli-idempotency.test.mjs`、`tests/resume.test.mjs` 和 `tests/offline-acceptance.test.mjs`。
+测试证据包括 `tests/input-contract.test.mjs`、`tests/domain-rules.test.mjs`、`tests/pi-agent.test.mjs`、`tests/orchestrator.test.mjs`、`tests/cli-idempotency.test.mjs`、`tests/resume.test.mjs`、`tests/offline-acceptance.test.mjs` 和 `tests/real-evidence-contract.test.mjs`。
 
 ## 实际运行材料
 
@@ -30,14 +31,16 @@
 
 ## 真实模型验证状态
 
-当前环境未提供受支持 Provider 的凭据，也未配置 `CONTENT_PLANNER_PROVIDER` 和 `CONTENT_PLANNER_MODEL`。因此：
+已使用 DeepSeek Provider 和 `deepseek-flash` 采集两条真实路径，索引为 `examples/real/manifest.json`。`node scripts/verify-real-evidence.mjs` 校验通过。
 
-- 两条真实模型动态路径 **未执行**，AC-010 和 DAC-004 仍为外部阻塞。
-- `tests/pi-agent.test.mjs` 证明 Pi/Faux 工具循环，不证明真实模型决策效果。
-- `examples/` 全部标记 `mode=mock`，只作为流程与实际状态证据。
-- 未以预设日志、离线结果或截图冒充真实模型验证。
+| 真实路径 | 实际输出与 Trace | 实际结果 |
+|---|---|---|
+| 正常规划 | `examples/real/outputs/replan.json`、`examples/real/traces/replan.jsonl`、`examples/real/plans/replan.json` | 模型依次检索、估算、生成脚本并保存，费用 7 不超过预算 10，最终完成 |
+| 保存失败 | `examples/real/outputs/tool-failure.json`、`examples/real/traces/tool-failure.jsonl` | 模型观察保存失败后重试，第二次仍失败后停止；保留成功检索、估算和脚本，最终未完成 |
 
-获得配置后，应使用 README 的真实模式命令采集至少两条不同工具观察路径，再更新本文件和 `specs/acceptance.md`。`scripts/capture-real-examples.mjs` 和 `scripts/verify-real-evidence.mjs` 已就绪并通过 `tests/real-evidence-contract.test.mjs` 合同测试，但尚未用于真实 Provider 运行。
+两条 Trace 均为 `mode=real`，包含实际工具参数、结果摘要、不同后续动作和公开决策说明，不包含模型内部思维过程。它们证明不同工具观察会导致不同模型动作，满足 AC-010 和 DAC-004。
+
+离线 `examples/` 仍全部标记 `mode=mock`，只作为流程与实际状态证据；真实材料单独存放在 `examples/real/`，没有相互替代。
 
 ## 失败与已知限制
 
@@ -45,11 +48,12 @@
 - 不提供同 ID 多进程并发锁；只保证顺序跨进程防重复。
 - 离线脚本由合成模板生成，不评价真实模型脚本质量。
 - 真实模型不可用时不自动切换到 Mock，真实模式会明确返回配置错误。
+- 本次仅验证 DeepSeek `deepseek-flash`，其他 Provider 和模型未逐一验证。
 
 ## T018 最终验收记录
 
-- 再次执行 `npm ci`、`npm run build` 和 `npm test`，63 项测试全部通过。
+- 已执行 `npm ci`、`npm run build` 和 `npm test`，64 项测试全部通过。
 - 按 README 运行正常与重复场景：首次完成，重复返回 `duplicate=true` 且保存路径不变。
 - 运行保存失败场景：返回未完成和 `SAVE_FAILED`。
-- 检查 82 个 Git 跟踪文件，原始笔试 HTML、`.env` 和密钥文件检出数为 0。
-- 离线最终验收通过；真实 Provider 凭据与模型配置仍未提供，AC-010、DAC-004 及完整 T015/T018 保持外部阻塞，未宣称全部验收通过。
+- 检查 Git 跟踪文件，原始笔试 HTML、`.env` 和密钥文件均未纳入。
+- 离线最终验收与两条真实模型证据校验均已通过，T015 已完成；T018 最终复核待执行。

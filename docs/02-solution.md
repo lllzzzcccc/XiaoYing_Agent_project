@@ -33,7 +33,7 @@ CLI 解析 JSON 后，请求网关先检查 `request_id` 和输入指纹：重�
 
 ## 已知限制
 
-- 真实 Provider 运行需要外部凭据和模型配置，当前未提供，因此真实路径未验证。
+- 真实 Provider 运行需要外部凭据和模型配置；本次已验证 DeepSeek `deepseek-flash`，其他 Provider 与模型未逐一验证。
 - 离线脚本生成采用确定性合成模板，只引用已检索事实，不代表真实模型脚本质量。
 - 不提供同 `request_id` 多进程并发互斥或跨主机一致性。
 - 当前只支持文档列出的五类 Provider，其他 Provider 需要显式注册。

@@ -15,7 +15,7 @@
 | AC-007 无可行方案与预算缺口 | 离线端到端通过 | `tests/orchestrator.test.mjs` | 已通过离线最终验收 |
 | AC-008 截止时间不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | 已通过离线最终验收 |
 | AC-009 跨进程重复执行 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/outputs/normal-duplicate.json` | 已通过离线最终验收 |
-| AC-010 两条真实动态路径 | 外部阻塞 | `tests/pi-agent.test.mjs` 仅证明 Faux 路径 | 真实 Provider 凭据与模型配置 |
+| AC-010 两条真实动态路径 | 真实模型证据通过 | `examples/real/manifest.json`、`examples/real/traces/replan.jsonl`、`examples/real/traces/tool-failure.jsonl` | 已通过真实证据校验 |
 | AC-011 执行上限 | 实际离线材料通过 | `examples/outputs/execution-limit.json` | 已通过离线最终验收 |
 | AC-012 失败步骤续跑（P1） | 独立进程通过 | `tests/resume.test.mjs` | 已通过离线最终验收 |
 | AC-013 离线 Mock 边界 | 材料与文档通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` | 已通过离线最终验收 |
@@ -31,9 +31,9 @@
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
 | DAC-001 可安装、配置并通过 CLI 运行 | 通过 | `README.md`、`tests/cli.test.mjs` |
-| DAC-002 可执行测试与评估引用 | 通过 | 当前 63 项测试通过；`docs/03-evaluation.md` |
-| DAC-003 三组以上实际材料及全部 P0 覆盖 | 部分覆盖 | 已有 6 组离线材料；真实动态路径外部阻塞 |
-| DAC-004 两条真实动态路径 | 外部阻塞 | 真实 Provider 凭据与模型配置未提供 |
+| DAC-002 可执行测试与评估引用 | 通过 | 当前 64 项测试通过；`docs/03-evaluation.md` |
+| DAC-003 三组以上实际材料及全部 P0 覆盖 | 通过 | 6 组离线材料及 2 条真实路径，P0 场景均有证据 |
+| DAC-004 两条真实动态路径 | 通过 | `examples/real/manifest.json` 及两条真实 Trace |
 | DAC-005 仓库与文档完整 | 通过 | `README.md`、`docs/`、`examples/README.md` |
 | DAC-006 提交信息与无敏感数据 | 进行中 | 本地提交正常；URL、权限和最终 SHA 属提交阶段 |
 | DAC-007 离线 Mock 边界 | 通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` |

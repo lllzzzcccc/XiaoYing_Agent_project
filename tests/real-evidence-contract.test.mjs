@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -40,6 +40,24 @@ test("validator accepts two real paths with different observations and public de
 
   assert.equal(result.scenarioCount, 2);
   assert.equal(new Set(result.signatures).size, 2);
+});
+
+test("validator resolves repository-relative evidence paths without duplicating directories", async () => {
+  const { validateRealEvidenceManifest } = await validatorModule;
+  const { scenarios } = await fixture();
+  const projectRoot = new URL("../", import.meta.url).pathname;
+  const manifestPath = path.join(projectRoot, ".runtime", "real-evidence-relative-manifest.json");
+  await mkdir(path.dirname(manifestPath), { recursive: true });
+  const relativeScenarios = scenarios.map((scenario) => ({
+    ...scenario,
+    input: path.relative(projectRoot, scenario.input),
+    output: path.relative(projectRoot, scenario.output),
+    trace: path.relative(projectRoot, scenario.trace),
+  }));
+  await writeFile(manifestPath, JSON.stringify({ mode: "real", scenarios: relativeScenarios }));
+
+  const result = await validateRealEvidenceManifest(manifestPath);
+  assert.equal(result.scenarioCount, 2);
 });
 
 test("validator rejects mock substitution and incomplete trace evidence", async () => {

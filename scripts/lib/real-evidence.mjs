@@ -1,6 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
+
+const projectRoot = fileURLToPath(new URL("../../", import.meta.url));
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
@@ -8,7 +10,7 @@ async function readJson(filePath) {
 
 function resolveEvidence(manifestDir, value, field) {
   if (!value) throw new Error(`真实证据缺少 ${field}`);
-  return path.isAbsolute(value) ? value : path.resolve(manifestDir, value);
+  return path.isAbsolute(value) ? value : path.resolve(projectRoot, value);
 }
 
 export async function validateRealEvidenceManifest(manifestPath) {

@@ -63,7 +63,7 @@ node --env-file=.env dist/src/cli.js \
   --runtime-dir .runtime/real-run
 ```
 
-`.env` 不得提交。真实配置缺失时程序明确失败，不会静默回退到 Mock。当前仓库材料采集环境未提供真实凭据，因此真实模型路径仍属未解决验证项，详见 `docs/03-evaluation.md`。
+`.env` 不得提交。真实配置缺失时程序明确失败，不会静默回退到 Mock。当前已使用 DeepSeek `deepseek-flash` 采集并校验两条真实路径，证据索引为 `examples/real/manifest.json`，详见 `docs/03-evaluation.md`。
 
 配置完成后，可采集并校验两条不同工具观察的真实路径：
 

@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "request_id": "real-tool-failure",
+  "duplicate": false,
+  "status": "incomplete",
+  "mode": "real",
+  "task_plan": {
+    "plan_id": "spring-launch-light",
+    "steps": [
+      {
+        "cost_item_id": "research",
+        "depends_on": [],
+        "quantity": 1,
+        "step_id": "s1",
+        "title": "素材调研与信息整理"
+      },
+      {
+        "cost_item_id": "draft",
+        "depends_on": [
+          "s1"
+        ],
+        "quantity": 1,
+        "step_id": "s2",
+        "title": "内容草稿与脚本制作"
+      },
+      {
+        "cost_item_id": "social",
+        "depends_on": [
+          "s2"
+        ],
+        "quantity": 1,
+        "step_id": "s3",
+        "title": "社群轻量发布方案"
+      }
+    ],
+    "title": "春季新品轻量内容方案",
+    "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1"
+  },
+  "steps": [
+    {
+      "step_id": "step-2aca4e05-c10a-4378-a083-db2ed9186111",
+      "tool_call_id": "call_00_s3YnxsnwQYlUIWB9mnIm1408",
+      "tool_name": "search_materials",
+      "attempt": 1,
+      "status": "succeeded",
+      "depends_on": [],
+      "args": {
+        "query": "春季新品",
+        "limit": 10
+      },
+      "result_summary": {
+        "query": "春季新品",
+        "items": [
+          {
+            "material_id": "M001",
+            "title": "春季新品发布素材",
+            "summary": "适合春季新品线上发布活动",
+            "facts": [
+              "新品支持字幕展示",
+              "提供三种外观配色",
+              "可在活动页预约体验"
+            ],
+            "tags": [
+              "春季",
+              "新品",
+              "发布",
+              "线上"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "error": null,
+      "plan_id": null,
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:57:24.688Z",
+      "finished_at": "2026-11-01T17:57:24.691Z"
+    },
+    {
+      "step_id": "step-a01b7ad4-62b8-4f98-b97f-ef2982ce5d87",
+      "tool_call_id": "call_00_aH0RoiDsIAwvxLqxcTNV2337",
+      "tool_name": "estimate_cost",
+      "attempt": 1,
+      "status": "succeeded",
+      "depends_on": [],
+      "args": {
+        "plan": {
+          "plan_id": "spring-launch-light",
+          "title": "春季新品轻量内容方案",
+          "steps": [
+            {
+              "step_id": "s1",
+              "title": "素材调研与信息整理",
+              "cost_item_id": "research",
+              "depends_on": [],
+              "quantity": 1
+            },
+            {
+              "step_id": "s2",
+              "title": "内容草稿与脚本制作",
+              "cost_item_id": "draft",
+              "depends_on": [
+                "s1"
+              ],
+              "quantity": 1
+            },
+            {
+              "step_id": "s3",
+              "title": "社群轻量发布方案",
+              "cost_item_id": "social",
+              "depends_on": [
+                "s2"
+              ],
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      "result_summary": {
+        "plan_id": "spring-launch-light",
+        "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+        "items": [
+          {
+            "step_id": "s1",
+            "cost_item_id": "research",
+            "quantity": 1,
+            "unit_cost": 1,
+            "subtotal_cost": 1,
+            "subtotal_duration_seconds": 60
+          },
+          {
+            "step_id": "s2",
+            "cost_item_id": "draft",
+            "quantity": 1,
+            "unit_cost": 2,
+            "subtotal_cost": 2,
+            "subtotal_duration_seconds": 120
+          },
+          {
+            "step_id": "s3",
+            "cost_item_id": "social",
+            "quantity": 1,
+            "unit_cost": 4,
+            "subtotal_cost": 4,
+            "subtotal_duration_seconds": 180
+          }
+        ],
+        "total_cost": 7,
+        "total_duration_seconds": 360,
+        "started_at": "2026-11-01T17:57:23.953Z",
+        "estimated_completion_at": "2026-11-01T18:03:23.953Z",
+        "budget": 10,
+        "deadline": "2027-12-31T23:59:59Z",
+        "budget_feasible": true,
+        "time_feasible": true,
+        "feasible": true,
+        "budget_gap": 0,
+        "estimate_id": "estimate-c5806a6b-1df1-4497-a21f-5af70f15aa68",
+        "estimated_at": "2026-11-01T17:57:26.205Z",
+        "valid": true
+      },
+      "error": null,
+      "plan_id": "spring-launch-light",
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:57:26.202Z",
+      "finished_at": "2026-11-01T17:57:26.205Z"
+    },
+    {
+      "step_id": "step-964256ba-0dbb-40e5-8b9f-0d9008b8f920",
+      "tool_call_id": "call_00_lPRJbkgGNa1J2RiPDV5Y7063",
+      "tool_name": "generate_script",
+      "attempt": 1,
+      "status": "succeeded",
+      "depends_on": [],
+      "args": {
+        "plan": {
+          "plan_id": "spring-launch-light",
+          "steps": [
+            {
+              "cost_item_id": "research",
+              "depends_on": [],
+              "quantity": 1,
+              "step_id": "s1",
+              "title": "素材调研与信息整理"
+            },
+            {
+              "cost_item_id": "draft",
+              "depends_on": [
+                "s1"
+              ],
+              "quantity": 1,
+              "step_id": "s2",
+              "title": "内容草稿与脚本制作"
+            },
+            {
+              "cost_item_id": "social",
+              "depends_on": [
+                "s2"
+              ],
+              "quantity": 1,
+              "step_id": "s3",
+              "title": "社群轻量发布方案"
+            }
+          ],
+          "title": "春季新品轻量内容方案"
+        },
+        "material_ids": [
+          "M001"
+        ]
+      },
+      "result_summary": {
+        "script_id": "script-dcd32bb4-35a3-4839-8c90-b9c127098d53",
+        "plan_id": "spring-launch-light",
+        "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+        "title": "春季新品轻量内容方案｜春季新品",
+        "content": "主题：春季新品\n方案：春季新品轻量内容方案\n素材 M001：新品支持字幕展示；提供三种外观配色；可在活动页预约体验",
+        "material_ids": [
+          "M001"
+        ],
+        "material_references": [
+          {
+            "material_id": "M001",
+            "facts": [
+              "新品支持字幕展示",
+              "提供三种外观配色",
+              "可在活动页预约体验"
+            ]
+          }
+        ],
+        "generated_at": "2026-11-01T17:57:27.256Z",
+        "valid": true
+      },
+      "error": null,
+      "plan_id": "spring-launch-light",
+      "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+      "started_at": "2026-11-01T17:57:27.255Z",
+      "finished_at": "2026-11-01T17:57:27.256Z"
+    },
+    {
+      "step_id": "step-b6398962-a836-4e64-895a-901a337ab8ae",
+      "tool_call_id": "call_00_WT5zj591Q6Uknpmng2WB2268",
+      "tool_name": "save_plan",
+      "attempt": 1,
+      "status": "failed",
+      "depends_on": [],
+      "args": {
+        "plan_id": "spring-launch-light"
+      },
+      "result_summary": [
+        {
+          "type": "text",
+          "text": "真实路径中的保存失败注入"
+        }
+      ],
+      "error": {
+        "code": "INJECTED_FAILURE",
+        "message": "真实路径中的保存失败注入",
+        "retryable": true,
+        "injected": true
+      },
+      "plan_id": "spring-launch-light",
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:57:28.312Z",
+      "finished_at": "2026-11-01T17:57:28.313Z"
+    },
+    {
+      "step_id": "step-e0307969-df6d-4323-9f89-8d041b66a67f",
+      "tool_call_id": "call_00_P1YQH1PWnUYygIs2nXXp8769",
+      "tool_name": "save_plan",
+      "attempt": 2,
+      "status": "failed",
+      "depends_on": [],
+      "args": {
+        "plan_id": "spring-launch-light"
+      },
+      "result_summary": [
+        {
+          "type": "text",
+          "text": "真实路径中的保存失败注入"
+        }
+      ],
+      "error": {
+        "code": "INJECTED_FAILURE",
+        "message": "真实路径中的保存失败注入",
+        "retryable": true,
+        "injected": true
+      },
+      "plan_id": "spring-launch-light",
+      "plan_fingerprint": null,
+      "started_at": "2026-11-01T17:57:29.244Z",
+      "finished_at": "2026-11-01T17:57:29.246Z"
+    }
+  ],
+  "tool_results": [
+    {
+      "step_id": "step-2aca4e05-c10a-4378-a083-db2ed9186111",
+      "tool_name": "search_materials",
+      "status": "succeeded",
+      "result_summary": {
+        "query": "春季新品",
+        "items": [
+          {
+            "material_id": "M001",
+            "title": "春季新品发布素材",
+            "summary": "适合春季新品线上发布活动",
+            "facts": [
+              "新品支持字幕展示",
+              "提供三种外观配色",
+              "可在活动页预约体验"
+            ],
+            "tags": [
+              "春季",
+              "新品",
+              "发布",
+              "线上"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "error": null
+    },
+    {
+      "step_id": "step-a01b7ad4-62b8-4f98-b97f-ef2982ce5d87",
+      "tool_name": "estimate_cost",
+      "status": "succeeded",
+      "result_summary": {
+        "plan_id": "spring-launch-light",
+        "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+        "items": [
+          {
+            "step_id": "s1",
+            "cost_item_id": "research",
+            "quantity": 1,
+            "unit_cost": 1,
+            "subtotal_cost": 1,
+            "subtotal_duration_seconds": 60
+          },
+          {
+            "step_id": "s2",
+            "cost_item_id": "draft",
+            "quantity": 1,
+            "unit_cost": 2,
+            "subtotal_cost": 2,
+            "subtotal_duration_seconds": 120
+          },
+          {
+            "step_id": "s3",
+            "cost_item_id": "social",
+            "quantity": 1,
+            "unit_cost": 4,
+            "subtotal_cost": 4,
+            "subtotal_duration_seconds": 180
+          }
+        ],
+        "total_cost": 7,
+        "total_duration_seconds": 360,
+        "started_at": "2026-11-01T17:57:23.953Z",
+        "estimated_completion_at": "2026-11-01T18:03:23.953Z",
+        "budget": 10,
+        "deadline": "2027-12-31T23:59:59Z",
+        "budget_feasible": true,
+        "time_feasible": true,
+        "feasible": true,
+        "budget_gap": 0,
+        "estimate_id": "estimate-c5806a6b-1df1-4497-a21f-5af70f15aa68",
+        "estimated_at": "2026-11-01T17:57:26.205Z",
+        "valid": true
+      },
+      "error": null
+    },
+    {
+      "step_id": "step-964256ba-0dbb-40e5-8b9f-0d9008b8f920",
+      "tool_name": "generate_script",
+      "status": "succeeded",
+      "result_summary": {
+        "script_id": "script-dcd32bb4-35a3-4839-8c90-b9c127098d53",
+        "plan_id": "spring-launch-light",
+        "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+        "title": "春季新品轻量内容方案｜春季新品",
+        "content": "主题：春季新品\n方案：春季新品轻量内容方案\n素材 M001：新品支持字幕展示；提供三种外观配色；可在活动页预约体验",
+        "material_ids": [
+          "M001"
+        ],
+        "material_references": [
+          {
+            "material_id": "M001",
+            "facts": [
+              "新品支持字幕展示",
+              "提供三种外观配色",
+              "可在活动页预约体验"
+            ]
+          }
+        ],
+        "generated_at": "2026-11-01T17:57:27.256Z",
+        "valid": true
+      },
+      "error": null
+    },
+    {
+      "step_id": "step-b6398962-a836-4e64-895a-901a337ab8ae",
+      "tool_name": "save_plan",
+      "status": "failed",
+      "result_summary": [
+        {
+          "type": "text",
+          "text": "真实路径中的保存失败注入"
+        }
+      ],
+      "error": {
+        "code": "INJECTED_FAILURE",
+        "message": "真实路径中的保存失败注入",
+        "retryable": true,
+        "injected": true
+      }
+    },
+    {
+      "step_id": "step-e0307969-df6d-4323-9f89-8d041b66a67f",
+      "tool_name": "save_plan",
+      "status": "failed",
+      "result_summary": [
+        {
+          "type": "text",
+          "text": "真实路径中的保存失败注入"
+        }
+      ],
+      "error": {
+        "code": "INJECTED_FAILURE",
+        "message": "真实路径中的保存失败注入",
+        "retryable": true,
+        "injected": true
+      }
+    }
+  ],
+  "current_cost": {
+    "current": {
+      "plan_id": "spring-launch-light",
+      "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+      "items": [
+        {
+          "step_id": "s1",
+          "cost_item_id": "research",
+          "quantity": 1,
+          "unit_cost": 1,
+          "subtotal_cost": 1,
+          "subtotal_duration_seconds": 60
+        },
+        {
+          "step_id": "s2",
+          "cost_item_id": "draft",
+          "quantity": 1,
+          "unit_cost": 2,
+          "subtotal_cost": 2,
+          "subtotal_duration_seconds": 120
+        },
+        {
+          "step_id": "s3",
+          "cost_item_id": "social",
+          "quantity": 1,
+          "unit_cost": 4,
+          "subtotal_cost": 4,
+          "subtotal_duration_seconds": 180
+        }
+      ],
+      "total_cost": 7,
+      "total_duration_seconds": 360,
+      "started_at": "2026-11-01T17:57:23.953Z",
+      "estimated_completion_at": "2026-11-01T18:03:23.953Z",
+      "budget": 10,
+      "deadline": "2027-12-31T23:59:59Z",
+      "budget_feasible": true,
+      "time_feasible": true,
+      "feasible": true,
+      "budget_gap": 0,
+      "estimate_id": "estimate-c5806a6b-1df1-4497-a21f-5af70f15aa68",
+      "estimated_at": "2026-11-01T17:57:26.205Z",
+      "valid": true
+    },
+    "history": [
+      {
+        "plan_id": "spring-launch-light",
+        "plan_fingerprint": "f417e80de45bc75fd23199d33edb9b937144bd042e700a9a7a5ead37516a01d1",
+        "items": [
+          {
+            "step_id": "s1",
+            "cost_item_id": "research",
+            "quantity": 1,
+            "unit_cost": 1,
+            "subtotal_cost": 1,
+            "subtotal_duration_seconds": 60
+          },
+          {
+            "step_id": "s2",
+            "cost_item_id": "draft",
+            "quantity": 1,
+            "unit_cost": 2,
+            "subtotal_cost": 2,
+            "subtotal_duration_seconds": 120
+          },
+          {
+            "step_id": "s3",
+            "cost_item_id": "social",
+            "quantity": 1,
+            "unit_cost": 4,
+            "subtotal_cost": 4,
+            "subtotal_duration_seconds": 180
+          }
+        ],
+        "total_cost": 7,
+        "total_duration_seconds": 360,
+        "started_at": "2026-11-01T17:57:23.953Z",
+        "estimated_completion_at": "2026-11-01T18:03:23.953Z",
+        "budget": 10,
+        "deadline": "2027-12-31T23:59:59Z",
+        "budget_feasible": true,
+        "time_feasible": true,
+        "feasible": true,
+        "budget_gap": 0,
+        "estimate_id": "estimate-c5806a6b-1df1-4497-a21f-5af70f15aa68",
+        "estimated_at": "2026-11-01T17:57:26.205Z",
+        "valid": true
+      }
+    ]
+  },
+  "duration": {
+    "total_duration_seconds": 360,
+    "started_at": "2026-11-01T17:57:23.953Z",
+    "estimated_completion_at": "2026-11-01T18:03:23.953Z"
+  },
+  "saved_plan": null,
+  "reasons": [
+    {
+      "code": "SAVE_FAILED",
+      "message": "方案保存失败",
+      "step_id": "step-b6398962-a836-4e64-895a-901a337ab8ae"
+    }
+  ],
+  "trace": {
+    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/tool-failure/traces/8c2ac3eeb17940a8ebb23c5015b7c47bb2195c011d00b9ae18fd64faa14a9603.jsonl",
+    "mode": "real"
+  }
+}

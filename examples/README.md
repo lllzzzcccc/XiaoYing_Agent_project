@@ -8,7 +8,9 @@
 - `plans/`：可独立读取的保存方案。
 - `faults/`：可复现的工具故障注入配置。
 
-这些材料由真实 CLI 离线执行生成，不是预期输出或手写 Trace。它们只证明流程、工具契约和状态处理，不证明真实模型决策效果。真实 Provider 路径因未提供凭据和模型配置而尚未采集。
+这些材料由真实 CLI 离线执行生成，不是预期输出或手写 Trace。它们只证明流程、工具契约和状态处理，不证明真实模型决策效果。
+
+`real/manifest.json` 是 DeepSeek `deepseek-flash` 的真实证据索引，包含正常保存与保存失败重试两条路径。`real/inputs/`、`real/outputs/`、`real/traces/` 和 `real/plans/` 与离线材料分开存放，均标记 `mode=real`。可运行 `node scripts/verify-real-evidence.mjs` 复核。
 
 重新生成：
 
