@@ -6,7 +6,7 @@
 
 - `npm ci`：通过，npm 审计 0 个漏洞。
 - `npm run build`：通过。
-- `npm test`：61 项测试通过，0 项失败。
+- `npm test`：63 项测试通过，0 项失败。
 - 离线 CLI：正常、输入不足、保存失败、无素材、执行上限和双重不可行均生成实际结果。
 - P1 续跑：复用成功结果、保留失败历史、开始时间不变且重试不额外计费。
 
@@ -37,7 +37,7 @@
 - `examples/` 全部标记 `mode=mock`，只作为流程与实际状态证据。
 - 未以预设日志、离线结果或截图冒充真实模型验证。
 
-获得配置后，应使用 README 的真实模式命令采集至少两条不同工具观察路径，再更新本文件和 `specs/acceptance.md`。
+获得配置后，应使用 README 的真实模式命令采集至少两条不同工具观察路径，再更新本文件和 `specs/acceptance.md`。`scripts/capture-real-examples.mjs` 和 `scripts/verify-real-evidence.mjs` 已就绪并通过 `tests/real-evidence-contract.test.mjs` 合同测试，但尚未用于真实 Provider 运行。
 
 ## 失败与已知限制
 
@@ -48,7 +48,7 @@
 
 ## T018 最终验收记录
 
-- 再次执行 `npm ci`、`npm run build` 和 `npm test`，61 项测试全部通过。
+- 再次执行 `npm ci`、`npm run build` 和 `npm test`，63 项测试全部通过。
 - 按 README 运行正常与重复场景：首次完成，重复返回 `duplicate=true` 且保存路径不变。
 - 运行保存失败场景：返回未完成和 `SAVE_FAILED`。
 - 检查 82 个 Git 跟踪文件，原始笔试 HTML、`.env` 和密钥文件检出数为 0。

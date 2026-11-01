@@ -31,7 +31,7 @@
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
 | DAC-001 可安装、配置并通过 CLI 运行 | 通过 | `README.md`、`tests/cli.test.mjs` |
-| DAC-002 可执行测试与评估引用 | 通过 | 当前 61 项测试通过；`docs/03-evaluation.md` |
+| DAC-002 可执行测试与评估引用 | 通过 | 当前 63 项测试通过；`docs/03-evaluation.md` |
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 部分覆盖 | 已有 6 组离线材料；真实动态路径外部阻塞 |
 | DAC-004 两条真实动态路径 | 外部阻塞 | 真实 Provider 凭据与模型配置未提供 |
 | DAC-005 仓库与文档完整 | 通过 | `README.md`、`docs/`、`examples/README.md` |

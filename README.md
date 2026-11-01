@@ -65,6 +65,15 @@ node --env-file=.env dist/src/cli.js \
 
 `.env` 不得提交。真实配置缺失时程序明确失败，不会静默回退到 Mock。当前仓库材料采集环境未提供真实凭据，因此真实模型路径仍属未解决验证项，详见 `docs/03-evaluation.md`。
 
+配置完成后，可采集并校验两条不同工具观察的真实路径：
+
+```bash
+node --env-file=.env scripts/capture-real-examples.mjs
+node scripts/verify-real-evidence.mjs
+```
+
+采集器只保存实际运行结果；若模型未给出所需公开决策说明或两条路径不可区分，校验会失败，不会生成替代性 Mock 证据。
+
 ## 重复与续跑
 
 相同 `request_id` 和输入会返回原结果并标记 `duplicate=true`；同 ID 不同输入返回冲突。运行记录和方案默认保存在 `.runtime/`，该目录被 Git 忽略。
