@@ -1,0 +1,33 @@
+# Original exam material
+/小影科技2027校招-AI Agent笔试题 · 卷面.html
+
+# Environment files and real credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+secrets/
+
+# Dependencies and build output
+node_modules/
+dist/
+
+# Runtime state
+.runtime/
+
+# Temporary files and logs
+*.log
+*.tmp
+*.temp
+logs/
+tmp/
+temp/
+
+# macOS
+.DS_Store
