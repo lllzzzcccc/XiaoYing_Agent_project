@@ -488,7 +488,7 @@
     }
   ],
   "trace": {
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/example-runs/save-failure/traces/8d2b704fc88c1b1346b3cab8bb7ced2def2bcd323b0f96292966c45940a60734.jsonl",
+    "path": ".runtime/example-runs/save-failure/traces/8d2b704fc88c1b1346b3cab8bb7ced2def2bcd323b0f96292966c45940a60734.jsonl",
     "mode": "mock"
   }
 }

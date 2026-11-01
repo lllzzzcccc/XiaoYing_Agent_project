@@ -536,7 +536,7 @@
     }
   ],
   "trace": {
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/tool-failure/traces/8c2ac3eeb17940a8ebb23c5015b7c47bb2195c011d00b9ae18fd64faa14a9603.jsonl",
+    "path": ".runtime/real-example-runs/tool-failure/traces/8c2ac3eeb17940a8ebb23c5015b7c47bb2195c011d00b9ae18fd64faa14a9603.jsonl",
     "mode": "real"
   }
 }

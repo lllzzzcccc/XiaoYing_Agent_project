@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
-import { copyFile, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { copyEvidenceJson, copyEvidenceJsonl, writeEvidenceJson } from "./lib/evidence.mjs";
 
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 const cliPath = path.join(projectRoot, "dist/src/cli.js");
@@ -60,7 +61,8 @@ function runCli(input, runtimeDir, options = {}) {
 
 async function copyIfPresent(source, target) {
   try {
-    await copyFile(source, target);
+    if (target.endsWith(".jsonl")) await copyEvidenceJsonl(source, target, projectRoot);
+    else await copyEvidenceJson(source, target, projectRoot);
     return true;
   } catch (error) {
     if (error.code === "ENOENT") return false;
@@ -92,7 +94,7 @@ for (const scenario of scenarios) {
   }
   await rm(runtimeDir, { recursive: true, force: true });
   const run = await runCli(input, runtimeDir, { faults: faultsPath, maxToolCalls: scenario.maxToolCalls });
-  await writeFile(output, `${JSON.stringify(run.result, null, 2)}\n`);
+  await writeEvidenceJson(output, run.result, projectRoot);
 
   const requestDir = path.join(runtimeDir, "requests");
   const requestFiles = await readdir(requestDir).catch(() => []);
@@ -118,7 +120,7 @@ for (const scenario of scenarios) {
     const duplicateOutput = path.join(examplesRoot, "outputs", "normal-duplicate.json");
     const duplicate = await runCli(input, runtimeDir);
     assert.equal(duplicate.result.duplicate, true);
-    await writeFile(duplicateOutput, `${JSON.stringify(duplicate.result, null, 2)}\n`);
+    await writeEvidenceJson(duplicateOutput, duplicate.result, projectRoot);
     manifest.duplicates.push({
       of: "normal",
       output: path.relative(projectRoot, duplicateOutput),

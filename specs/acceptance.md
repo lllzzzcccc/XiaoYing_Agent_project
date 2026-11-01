@@ -31,7 +31,7 @@
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
 | DAC-001 可安装、配置并通过 CLI 运行 | 通过 | `README.md`、`tests/cli.test.mjs` |
-| DAC-002 可执行测试与评估引用 | 通过 | 当前 64 项测试通过；`docs/03-evaluation.md` |
+| DAC-002 可执行测试与评估引用 | 通过 | 当前 65 项测试通过；`docs/03-evaluation.md`、`tests/evidence-paths.test.mjs` |
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 通过 | 6 组离线材料及 2 条真实路径，P0 场景均有证据 |
 | DAC-004 两条真实动态路径 | 通过 | `examples/real/manifest.json` 及两条真实 Trace |
 | DAC-005 仓库与文档完整 | 通过 | `README.md`、`docs/`、`examples/README.md` |

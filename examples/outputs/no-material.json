@@ -83,7 +83,7 @@
     }
   ],
   "trace": {
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/example-runs/no-material/traces/e8754bbfb9414ce5bf23aeec722ff3872eb6508fc189cdb1de19805d76044306.jsonl",
+    "path": ".runtime/example-runs/no-material/traces/e8754bbfb9414ce5bf23aeec722ff3872eb6508fc189cdb1de19805d76044306.jsonl",
     "mode": "mock"
   }
 }

@@ -368,7 +368,7 @@
     }
   ],
   "trace": {
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/example-runs/dual-infeasible/traces/68ad66d8c98d80fdf1a27fe3991efd8ca1b8dd4273b01eacdc6cb053a6d6ce8c.jsonl",
+    "path": ".runtime/example-runs/dual-infeasible/traces/68ad66d8c98d80fdf1a27fe3991efd8ca1b8dd4273b01eacdc6cb053a6d6ce8c.jsonl",
     "mode": "mock"
   }
 }

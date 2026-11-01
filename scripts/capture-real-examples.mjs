@@ -1,7 +1,8 @@
 import { spawn } from "node:child_process";
-import { copyFile, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { copyEvidenceJson, copyEvidenceJsonl, writeEvidenceJson } from "./lib/evidence.mjs";
 import { validateRealEvidenceManifest } from "./lib/real-evidence.mjs";
 
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
@@ -45,7 +46,8 @@ function runCli(input, runtimeDir, faults) {
 
 async function copyIfPresent(source, target) {
   try {
-    await copyFile(source, target);
+    if (target.endsWith(".jsonl")) await copyEvidenceJsonl(source, target, projectRoot);
+    else await copyEvidenceJson(source, target, projectRoot);
     return true;
   } catch (error) {
     if (error.code === "ENOENT") return false;
@@ -83,7 +85,7 @@ for (const scenario of scenarios) {
   }
   await rm(runtimeDir, { recursive: true, force: true });
   const run = await runCli(input, runtimeDir, faultsPath);
-  await writeFile(output, `${JSON.stringify(run.result, null, 2)}\n`);
+  await writeEvidenceJson(output, run.result, projectRoot);
 
   const requestDir = path.join(runtimeDir, "requests");
   const [requestFile] = await readdir(requestDir);

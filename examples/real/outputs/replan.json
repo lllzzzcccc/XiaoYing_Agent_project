@@ -242,7 +242,7 @@
         "plan_id": "spring-light",
         "plan_fingerprint": "f1d0b6dcb4a06a40d079689f777ed110cb12fdac2932df80bdc3608e73fe16b2",
         "saved_at": "2026-11-01T17:57:22.147Z",
-        "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
+        "path": ".runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
         "already_saved": false
       },
       "error": null,
@@ -367,7 +367,7 @@
         "plan_id": "spring-light",
         "plan_fingerprint": "f1d0b6dcb4a06a40d079689f777ed110cb12fdac2932df80bdc3608e73fe16b2",
         "saved_at": "2026-11-01T17:57:22.147Z",
-        "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
+        "path": ".runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
         "already_saved": false
       },
       "error": null
@@ -473,12 +473,12 @@
     "plan_id": "spring-light",
     "plan_fingerprint": "f1d0b6dcb4a06a40d079689f777ed110cb12fdac2932df80bdc3608e73fe16b2",
     "saved_at": "2026-11-01T17:57:22.147Z",
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
+    "path": ".runtime/real-example-runs/replan/plans/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.json",
     "already_saved": false
   },
   "reasons": [],
   "trace": {
-    "path": "/Users/chammm/Documents/GitHub-workspace/XiaoYing_Agent_project/.runtime/real-example-runs/replan/traces/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.jsonl",
+    "path": ".runtime/real-example-runs/replan/traces/e481074de67e351e6d3534bb737d745e779f7e20abe2db0134ccbc759fa37342.jsonl",
     "mode": "real"
   }
 }

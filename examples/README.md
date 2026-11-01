@@ -12,6 +12,8 @@
 
 `real/manifest.json` 是 DeepSeek `deepseek-flash` 的真实证据索引，包含正常保存与保存失败重试两条路径。`real/inputs/`、`real/outputs/`、`real/traces/` 和 `real/plans/` 与离线材料分开存放，均标记 `mode=real`。可运行 `node scripts/verify-real-evidence.mjs` 复核。
 
+所有证据中的运行路径均规范化为仓库相对的 `.runtime/...`，不保留本机绝对路径；工具动作、状态和业务结果保持原始采集内容。`tests/evidence-paths.test.mjs` 用于防回归。
+
 重新生成：
 
 ```bash
