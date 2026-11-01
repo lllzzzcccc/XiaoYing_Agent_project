@@ -8,7 +8,12 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "node --test"
+    "test": "node --test",
+    "cli": "node dist/src/cli.js",
+    "start": "node dist/src/cli.js"
+  },
+  "bin": {
+    "content-planner": "dist/src/cli.js"
   },
   "dependencies": {
     "@earendil-works/pi-agent-core": "1.4.0",

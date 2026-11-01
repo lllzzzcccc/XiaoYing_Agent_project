@@ -5,6 +5,7 @@ export interface ResultReason {
   code: string;
   message: string;
   step_id?: string;
+  field?: string | null;
   budget_gap?: number;
   current_cost?: number;
   estimated_completion_at?: string;
