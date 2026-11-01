@@ -10,7 +10,7 @@
 | AC-002 缺少预算 | 单元通过 | `tests/input-contract.test.mjs` | T012 CLI 验证 |
 | AC-003 缺少截止时间 | 单元通过 | `tests/input-contract.test.mjs` | T012 CLI 验证 |
 | AC-004 工具失败与部分成功 | 脚本失败与历史部分覆盖 | `tests/script-tool.test.mjs` | T010、T011、T015 |
-| AC-005 保存失败 | 未覆盖 | — | T008、T011 |
+| AC-005 保存失败 | 工具契约通过 | `tests/save-plan-tool.test.mjs` | T011 端到端状态验证 |
 | AC-006 超预算替代方案 | 工具契约部分覆盖 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T010、T011、T015 |
 | AC-007 无可行方案与预算缺口 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T011 端到端验证 |
 | AC-008 截止时间不可行 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T011 端到端验证 |
@@ -24,14 +24,14 @@
 | AC-016 完成时间等于截止时间 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T014 回归确认 |
 | AC-017 预算和时间同时不可行 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T011 原因聚合验证 |
 | AC-018 相同 ID 不同输入 | 存储契约通过 | `tests/request-store.test.mjs` | T013 独立进程验证 |
-| AC-019 保存内容独立核对 | 未覆盖 | — | T008、T013 |
+| AC-019 保存内容独立核对 | 工具契约通过 | `tests/save-plan-tool.test.mjs` | T013 CLI 复核 |
 
 ## 通用交付验收
 
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
 | DAC-001 可安装、配置并通过 CLI 运行 | 部分覆盖 | T001 安装通过；CLI 待 T012 |
-| DAC-002 可执行测试与评估引用 | 进行中 | 当前 31 项测试通过；评估文档待 T017 |
+| DAC-002 可执行测试与评估引用 | 进行中 | 当前 35 项测试通过；评估文档待 T017 |
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 未覆盖 | T015、T018 |
 | DAC-004 两条真实动态路径 | 未覆盖 | T010、T015 |
 | DAC-005 仓库与文档完整 | 进行中 | 基础配置已提交；其余文档待 T017 |
