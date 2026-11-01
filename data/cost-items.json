@@ -1,0 +1,32 @@
+[
+  {
+    "cost_item_id": "research",
+    "description": "素材调研与信息整理",
+    "unit_cost": 1,
+    "duration_seconds": 60
+  },
+  {
+    "cost_item_id": "draft",
+    "description": "内容草稿与脚本制作",
+    "unit_cost": 2,
+    "duration_seconds": 120
+  },
+  {
+    "cost_item_id": "social",
+    "description": "社群轻量发布方案",
+    "unit_cost": 4,
+    "duration_seconds": 180
+  },
+  {
+    "cost_item_id": "video",
+    "description": "视频内容制作方案",
+    "unit_cost": 8,
+    "duration_seconds": 600
+  },
+  {
+    "cost_item_id": "premium",
+    "description": "高成本整合内容方案",
+    "unit_cost": 12,
+    "duration_seconds": 900
+  }
+]
