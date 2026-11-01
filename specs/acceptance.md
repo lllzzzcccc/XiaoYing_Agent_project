@@ -18,7 +18,7 @@
 | AC-010 两条真实动态路径 | 外部阻塞 | `tests/pi-agent.test.mjs` 仅证明 Faux 路径 | 真实 Provider 凭据与模型配置 |
 | AC-011 执行上限 | 实际离线材料通过 | `examples/outputs/execution-limit.json` | T018 最终验收 |
 | AC-012 失败步骤续跑（P1） | 独立进程通过 | `tests/resume.test.mjs` | T018 最终验收 |
-| AC-013 离线 Mock 边界 | 实际离线材料通过 | `examples/manifest.json` | T017 边界文档 |
+| AC-013 离线 Mock 边界 | 材料与文档通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` | T018 最终验收 |
 | AC-014 缺失或非法输入 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs`、`tests/cli.test.mjs` | T018 最终验收 |
 | AC-015 无素材 | 实际离线材料通过 | `examples/outputs/no-material.json`、`examples/traces/no-material.jsonl` | T018 最终验收 |
 | AC-016 完成时间等于截止时间 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T018 最终验收 |
@@ -30,11 +30,11 @@
 
 | 条件 | 当前状态 | 当前证据或缺口 |
 |---|---|---|
-| DAC-001 可安装、配置并通过 CLI 运行 | CLI 验证通过 | `tests/cli.test.mjs`；README 待 T017 |
-| DAC-002 可执行测试与评估引用 | 进行中 | 当前 58 项测试通过；评估文档待 T017 |
+| DAC-001 可安装、配置并通过 CLI 运行 | 通过 | `README.md`、`tests/cli.test.mjs` |
+| DAC-002 可执行测试与评估引用 | 通过 | 当前 61 项测试通过；`docs/03-evaluation.md` |
 | DAC-003 三组以上实际材料及全部 P0 覆盖 | 部分覆盖 | 已有 6 组离线材料；真实动态路径外部阻塞 |
 | DAC-004 两条真实动态路径 | 外部阻塞 | 真实 Provider 凭据与模型配置未提供 |
-| DAC-005 仓库与文档完整 | 进行中 | 基础配置已提交；其余文档待 T017 |
+| DAC-005 仓库与文档完整 | 通过 | `README.md`、`docs/`、`examples/README.md` |
 | DAC-006 提交信息与无敏感数据 | 进行中 | 本地提交正常；URL、权限和最终 SHA 属提交阶段 |
-| DAC-007 离线 Mock 边界 | 实际材料通过 | `examples/manifest.json`；边界文档待 T017 |
+| DAC-007 离线 Mock 边界 | 通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` |
 | DAC-008 技术栈、官方 Pi 包与版本锁定 | 通过 | `tests/dependency-contract.test.mjs`、`docs/02-solution.md` |
