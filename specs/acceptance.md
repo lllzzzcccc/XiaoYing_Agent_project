@@ -6,25 +6,25 @@
 
 | 场景 | 当前状态 | 当前证据 | 后续缺口 |
 |---|---|---|---|
-| AC-001 正常完成 | 实际离线材料通过 | `examples/manifest.json`、`examples/plans/normal.json` | T018 最终验收 |
-| AC-002 缺少预算 | 实际离线材料通过 | `examples/inputs/missing-budget.json`、`examples/outputs/missing-budget.json` | T018 最终验收 |
-| AC-003 缺少截止时间 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs` | T018 最终验收 |
-| AC-004 工具失败与部分成功 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | T018 最终验收 |
-| AC-005 保存失败 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | T018 最终验收 |
+| AC-001 正常完成 | 实际离线材料通过 | `examples/manifest.json`、`examples/plans/normal.json` | 已通过离线最终验收 |
+| AC-002 缺少预算 | 实际离线材料通过 | `examples/inputs/missing-budget.json`、`examples/outputs/missing-budget.json` | 已通过离线最终验收 |
+| AC-003 缺少截止时间 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs` | 已通过离线最终验收 |
+| AC-004 工具失败与部分成功 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | 已通过离线最终验收 |
+| AC-005 保存失败 | 实际离线材料通过 | `examples/outputs/save-failure.json`、`examples/traces/save-failure.jsonl` | 已通过离线最终验收 |
 | AC-006 超预算替代方案 | 离线端到端通过 | `tests/pi-agent.test.mjs`、`tests/orchestrator.test.mjs` | 真实 Provider 凭据与模型配置 |
-| AC-007 无可行方案与预算缺口 | 离线端到端通过 | `tests/orchestrator.test.mjs` | T018 最终验收 |
-| AC-008 截止时间不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | T018 最终验收 |
-| AC-009 跨进程重复执行 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/outputs/normal-duplicate.json` | T018 最终验收 |
+| AC-007 无可行方案与预算缺口 | 离线端到端通过 | `tests/orchestrator.test.mjs` | 已通过离线最终验收 |
+| AC-008 截止时间不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | 已通过离线最终验收 |
+| AC-009 跨进程重复执行 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/outputs/normal-duplicate.json` | 已通过离线最终验收 |
 | AC-010 两条真实动态路径 | 外部阻塞 | `tests/pi-agent.test.mjs` 仅证明 Faux 路径 | 真实 Provider 凭据与模型配置 |
-| AC-011 执行上限 | 实际离线材料通过 | `examples/outputs/execution-limit.json` | T018 最终验收 |
-| AC-012 失败步骤续跑（P1） | 独立进程通过 | `tests/resume.test.mjs` | T018 最终验收 |
-| AC-013 离线 Mock 边界 | 材料与文档通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` | T018 最终验收 |
-| AC-014 缺失或非法输入 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs`、`tests/cli.test.mjs` | T018 最终验收 |
-| AC-015 无素材 | 实际离线材料通过 | `examples/outputs/no-material.json`、`examples/traces/no-material.jsonl` | T018 最终验收 |
-| AC-016 完成时间等于截止时间 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | T018 最终验收 |
-| AC-017 预算和时间同时不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | T018 最终验收 |
-| AC-018 相同 ID 不同输入 | 独立进程通过 | `tests/cli-idempotency.test.mjs` | T018 最终验收 |
-| AC-019 保存内容独立核对 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/plans/normal.json` | T018 最终验收 |
+| AC-011 执行上限 | 实际离线材料通过 | `examples/outputs/execution-limit.json` | 已通过离线最终验收 |
+| AC-012 失败步骤续跑（P1） | 独立进程通过 | `tests/resume.test.mjs` | 已通过离线最终验收 |
+| AC-013 离线 Mock 边界 | 材料与文档通过 | `examples/manifest.json`、`README.md`、`docs/03-evaluation.md` | 已通过离线最终验收 |
+| AC-014 缺失或非法输入 | 输入与 CLI 契约通过 | `tests/input-contract.test.mjs`、`tests/cli.test.mjs` | 已通过离线最终验收 |
+| AC-015 无素材 | 实际离线材料通过 | `examples/outputs/no-material.json`、`examples/traces/no-material.jsonl` | 已通过离线最终验收 |
+| AC-016 完成时间等于截止时间 | 工具契约通过 | `tests/domain-rules.test.mjs`、`tests/estimate-tool.test.mjs` | 已通过离线最终验收 |
+| AC-017 预算和时间同时不可行 | 实际离线材料通过 | `examples/outputs/dual-infeasible.json` | 已通过离线最终验收 |
+| AC-018 相同 ID 不同输入 | 独立进程通过 | `tests/cli-idempotency.test.mjs` | 已通过离线最终验收 |
+| AC-019 保存内容独立核对 | 独立进程与实际材料通过 | `tests/cli-idempotency.test.mjs`、`examples/plans/normal.json` | 已通过离线最终验收 |
 
 ## 通用交付验收
 
